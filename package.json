@@ -1,0 +1,24 @@
+{
+  "name": "fit-gaea-web-components",
+  "version": "1.0.3",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://g@gitlab.baidu.com:8022/tb-component/pc-gaea-web-components.git"
+  },
+  "author": "huangziyi01",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.0 || ^15.0.0",
+    "fit-button": "^3.1.46",
+    "fit-transmit-transparently": "^3.1.38",
+    "fit-input": "^5.0.37",
+    "fit-loading": "^0.0.35",
+    "fit-select": "^4.0.50"
+  },
+  "typings": "lib/index.d.ts"
+}
