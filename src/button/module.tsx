@@ -1,19 +1,24 @@
-export interface PropsInterface extends FitGaea.ComponentProps {
+export interface PropsInterface {
+    /**
+     * 标题
+     */
+    name?: string
 }
 
-export class Props implements PropsInterface {
-    public name = '按钮'
-    public icon = 'square-o'
-    public uniqueKey = 'gaea-button'
+export class PropsGaea {
+    gaeaName = '按钮'
+    gaeaIcon = 'square-o'
+    gaeaUniqueKey = 'gaea-button'
+    gaeaEdit = [{
+        field: 'name',
+        label: '文字',
+        editor: 'text',
+        editable: true
+    }]
+}
 
-    options = {
-        text: {
-            label: '文字',
-            value: '按钮',
-            editor: 'text',
-            editable: true
-        }
-    } as any
+export class Props extends PropsGaea implements PropsInterface {
+    name = '按钮'
 }
 
 export interface StateInterface {

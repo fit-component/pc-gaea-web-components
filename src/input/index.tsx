@@ -10,7 +10,7 @@ export default class InputComponent extends React.Component <module.PropsInterfa
     render() {
         const otherProps = others(new module.Props(), this.props)
         return (
-            <Input {...otherProps} label={this.props.options['label'].value}/>
+            <Input {...otherProps} label={this.props.text}/>
         )
     }
 }

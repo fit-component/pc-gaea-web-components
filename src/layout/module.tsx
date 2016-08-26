@@ -1,148 +1,139 @@
-export interface PropsInterface extends FitGaea.ComponentProps {
-
+export interface PropsInterface {
+    width?: number|string
+    minHeight?: number|string
+    display?: string
+    justifyContent?: string
+    alignItems?: string
+    flexDirection?: string
+    flexWrap?: string
+    flexGrow?: number
+    background?: string
+    overflow?: string
 }
 
-export class Props implements PropsInterface {
-    name = '布局'
-    icon = 'square-o'
-    uniqueKey = 'gaea-layout'
+export class PropsGaea {
+    gaeaName = '布局'
+    gaeaIcon = 'square-o'
+    gaeaUniqueKey = 'gaea-layout'
+    gaeaEdit = [{
+        field: 'width',
+        label: '宽度',
+        editor: 'text',
+        editable: true,
+    }, {
+        field: 'minHeight',
+        label: '最小高度',
+        editor: 'text',
+        editable: true,
+    }, {
+        field: 'display',
+        label: '布局类型',
+        editor: 'none',
+        editable: false
+    }, {
+        field: 'justifyContent',
+        label: '主轴对齐方式',
+        editor: 'selector',
+        editable: true,
+        selector: [{
+            key: 'flex-start',
+            value: 'flex-start'
+        }, {
+            key: 'flex-end',
+            value: 'flex-end'
+        }, {
+            key: 'center',
+            value: 'center'
+        }, {
+            key: 'space-between',
+            value: 'space-between'
+        }, {
+            key: 'space-around',
+            value: 'space-around'
+        }]
+    }, {
+        field: 'alignItems',
+        label: '交叉轴对齐方式',
+        editor: 'selector',
+        editable: true,
+        selector: [{
+            key: 'flex-start',
+            value: 'flex-start'
+        }, {
+            key: 'flex-end',
+            value: 'flex-end'
+        }, {
+            key: 'center',
+            value: 'center'
+        }, {
+            key: 'baseline',
+            value: 'baseline'
+        }, {
+            key: 'stretch',
+            value: 'stretch'
+        }]
+    }, {
+        field: 'flexDirection',
+        label: '布局方向',
+        editor: 'selector',
+        editable: true,
+        selector: [{
+            key: 'row',
+            value: 'row'
+        }, {
+            key: 'row-reverse',
+            value: 'row-reverse'
+        }, {
+            key: 'column',
+            value: 'column'
+        }, {
+            key: 'column-reverse',
+            value: 'column-reverse'
+        }]
+    }, {
+        field: 'flexWrap',
+        label: '排列方式',
+        editor: 'selector',
+        editable: true,
+        selector: [{
+            key: 'nowrap',
+            value: 'nowrap'
+        }, {
+            key: 'wrap',
+            value: 'wrap'
+        }, {
+            key: 'wrap-reverse',
+            value: 'wrap-reverse'
+        }]
+    }, {
+        field: 'flexGrow',
+        label: 'flex-grow',
+        editor: 'none',
+        editable: false,
+    }, {
+        field: 'background',
+        label: '背景',
+        editor: 'background',
+        editable: true
+    }, {
+        field: 'overflow',
+        label: 'overflow',
+        editor: 'none',
+        editable: false
+    }]
+}
 
-    options = {
-        width: {
-            label: '宽',
-            value: '100%',
-            editor: 'text',
-            editable: true,
-            order: 0,
-        },
-
-        minHeight: {
-            label: '最小高度',
-            value: 80,
-            editor: 'text',
-            editable: true,
-            order: 1
-        },
-
-        display: {
-            label: '布局类型',
-            value: 'flex',
-            editor: 'none',
-            editable: false,
-            order: 2
-        },
-
-        justifyContent: {
-            label: '主轴对齐方式',
-            value: 'flex-start',
-            editor: 'selector',
-            editable: true,
-            selector: [{
-                key: 'flex-start',
-                value: 'flex-start'
-            }, {
-                key: 'flex-end',
-                value: 'flex-end'
-            }, {
-                key: 'center',
-                value: 'center'
-            }, {
-                key: 'space-between',
-                value: 'space-between'
-            }, {
-                key: 'space-around',
-                value: 'space-around'
-            }],
-            order: 3
-        },
-
-        alignItems: {
-            label: '交叉轴对齐方式',
-            value: 'flex-start',
-            editor: 'selector',
-            editable: true,
-            selector: [{
-                key: 'flex-start',
-                value: 'flex-start'
-            }, {
-                key: 'flex-end',
-                value: 'flex-end'
-            }, {
-                key: 'center',
-                value: 'center'
-            }, {
-                key: 'baseline',
-                value: 'baseline'
-            }, {
-                key: 'stretch',
-                value: 'stretch'
-            }],
-            order: 4
-        },
-
-        flexDirection: {
-            label: '布局方向',
-            value: 'row',
-            editor: 'selector',
-            editable: true,
-            selector: [{
-                key: 'row',
-                value: 'row'
-            }, {
-                key: 'row-reverse',
-                value: 'row-reverse'
-            }, {
-                key: 'column',
-                value: 'column'
-            }, {
-                key: 'column-reverse',
-                value: 'column-reverse'
-            }],
-            order: 5
-        },
-
-        flexWrap: {
-            label: '排列方式',
-            value: 'nowrap',
-            editor: 'selector',
-            editable: true,
-            selector: [{
-                key: 'nowrap',
-                value: 'nowrap'
-            }, {
-                key: 'wrap',
-                value: 'wrap'
-            }, {
-                key: 'wrap-reverse',
-                value: 'wrap-reverse'
-            }],
-            order: 6
-        },
-
-        flexGrow: {
-            label: 'flex-grow',
-            value: null as any,
-            editor: 'none',
-            editable: false,
-            order: 7
-        },
-
-        background: {
-            label: '背景',
-            value: 'white',
-            editor: 'background',
-            editable: true,
-            order: 8
-        },
-
-        overflow: {
-            label: 'overflow',
-            value: 'hidden',
-            editor: 'none',
-            editable: false,
-            order: 9
-        },
-    } as any
+export class Props extends PropsGaea implements PropsInterface {
+    width = '100%'
+    minHeight = 80
+    display = 'flex'
+    justifyContent = 'flex-start'
+    alignItems = 'flex-start'
+    flexDirection = 'row'
+    flexWrap = 'nowrap'
+    flexGrow = null as any
+    background = 'white'
+    overflow = 'hidden'
 }
 
 export interface StateInterface {

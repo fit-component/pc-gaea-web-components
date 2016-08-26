@@ -10,7 +10,7 @@ export default class ButtonComponent extends React.Component <module.PropsInterf
     render() {
         const otherProps = others(new module.Props(), this.props)
         return (
-            <Button {...otherProps}>{this.props.options['text'].value}</Button>
+            <Button {...otherProps}>{this.props.name}</Button>
         )
     }
 }

@@ -1,5 +1,4 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
-/// <reference path="../../gaea/models/tsd.d.ts" />
 
 import * as React from 'react'
 import Button from './button'
@@ -9,4 +8,4 @@ import Loading from './loading'
 import Select from './select'
 import Paragraph from './paragraph'
 
-export default [Layout, Paragraph, Button, Input, Select, Loading] as Array<React.ComponentClass<FitGaea.ComponentProps>>
+export default [Layout, Paragraph, Button, Input, Select, Loading] as any

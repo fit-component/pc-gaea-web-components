@@ -10,7 +10,7 @@ export default class InputComponent extends React.Component <module.PropsInterfa
     render() {
         // 重新组成符合 select 结构的 options
         let selectOptions: any
-        (this.props.options['options'].array as any).forEach((item: any)=> {
+        this.props.options && this.props.options.forEach((item: any)=> {
             selectOptions[item.key] = item.value
         })
 
@@ -18,9 +18,9 @@ export default class InputComponent extends React.Component <module.PropsInterfa
 
         return (
             <Select {...otherProps}
-                label={this.props.options['label'].value}
-                options={this.props.options['options'].value}
-                defaultValue={this.props.options['defaultValue'].value}/>
+                label={this.props.label}
+                options={selectOptions}
+                defaultValue={this.props.defaultValue}/>
         )
     }
 }

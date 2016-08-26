@@ -1,10 +1,14 @@
-export interface PropsInterface extends FitGaea.ComponentProps {
+export interface PropsInterface {
 }
 
-export class Props implements PropsInterface {
-    name = '载入动画'
-    icon = 'circle-o-notch'
-    uniqueKey = 'gaea-loading'
+export class PropsGaea {
+    gaeaName = '载入动画'
+    gaeaIcon = 'circle-o-notch'
+    gaeaUniqueKey = 'gaea-loading'
+}
+
+export class Props extends PropsGaea implements PropsInterface {
+
 }
 
 export interface StateInterface {

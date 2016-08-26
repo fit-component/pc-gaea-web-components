@@ -8,13 +8,13 @@ export default class ParagraphComponent extends React.Component <module.PropsInt
 
     render() {
         const style = {
-            fontSize: this.props.options['fontSize'].value
+            fontSize: this.props.fontSize
         }
 
         const otherProps = others(new module.Props(), this.props)
 
         return (
-            <span {...otherProps} style={style}>{this.props.options['text'].value}</span>
+            <span {...otherProps} style={style}>{this.props.text}</span>
         )
     }
 }

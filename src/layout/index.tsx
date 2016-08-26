@@ -8,16 +8,16 @@ export default class LayoutComponent extends React.Component <module.PropsInterf
 
     render() {
         let style: any = {
-            width: this.props.options['width'].value,
-            minHeight: this.props.options['minHeight'].value,
-            background: this.props.options['background'].value,
-            display: this.props.options['display'].value,
-            flexDirection: this.props.options['flexDirection'].value,
-            flexGrow: this.props.options['flexGrow'].value,
-            flexWrap: this.props.options['flexWrap'].value,
-            justifyContent: this.props.options['justifyContent'].value,
-            alignItems: this.props.options['alignItems'].value,
-            overflow: this.props.options['overflow'].value
+            width: this.props.width,
+            minHeight: this.props.minHeight,
+            background: this.props.background,
+            display: this.props.display,
+            flexDirection: this.props.flexDirection,
+            flexGrow: this.props.flexGrow,
+            flexWrap: this.props.flexWrap,
+            justifyContent: this.props.justifyContent,
+            alignItems: this.props.alignItems,
+            overflow: this.props.overflow
         }
 
         const otherProps = others(new module.Props(), this.props)
