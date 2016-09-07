@@ -9,6 +9,8 @@ export default class LayoutComponent extends React.Component <module.PropsInterf
     render() {
         let style: any = {
             width: this.props.width,
+            minWidth: this.props.minWidth,
+            height: this.props.height,
             minHeight: this.props.minHeight,
             background: this.props.background,
             display: this.props.display,

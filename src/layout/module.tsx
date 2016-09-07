@@ -1,6 +1,8 @@
 export interface PropsInterface {
-    width?: number|string
-    minHeight?: number|string
+    width?: number
+    minWidth?: number
+    height?: number
+    minHeight?: number
     display?: string
     justifyContent?: string
     alignItems?: string
@@ -16,15 +18,45 @@ export class PropsGaea {
     gaeaIcon = 'square-o'
     gaeaUniqueKey = 'gaea-layout'
     gaeaEdit = [{
-        field: 'width',
-        label: '宽度',
+        field: 'flexGrow',
+        label: 'flex-grow',
+        type: 'number',
         editor: 'text',
         editable: true,
+        notNullValue: 1,
+        canNull: true
+    }, {
+        field: 'height',
+        label: '高度',
+        editor: 'text',
+        type: 'number',
+        editable: true,
+        notNullValue: 50,
+        canNull: true
     }, {
         field: 'minHeight',
         label: '最小高度',
         editor: 'text',
+        type: 'number',
+        notNullValue: 0,
         editable: true,
+        canNull: true
+    }, {
+        field: 'width',
+        label: '宽度',
+        editor: 'text',
+        type: 'number',
+        editable: true,
+        notNullValue: 50,
+        canNull: true
+    }, {
+        field: 'minWidth',
+        label: '最小宽度',
+        editor: 'text',
+        type: 'number',
+        editable: true,
+        notNullValue: 0,
+        canNull: true
     }, {
         field: 'display',
         label: '布局类型',
@@ -105,33 +137,20 @@ export class PropsGaea {
             key: 'wrap-reverse',
             value: 'wrap-reverse'
         }]
-    }, {
-        field: 'flexGrow',
-        label: 'flex-grow',
-        editor: 'none',
-        editable: false,
-    }, {
-        field: 'background',
-        label: '背景',
-        editor: 'background',
-        editable: true
-    }, {
-        field: 'overflow',
-        label: 'overflow',
-        editor: 'none',
-        editable: false
     }]
 }
 
 export class Props extends PropsGaea implements PropsInterface {
-    width = '100%'
-    minHeight = 80
     display = 'flex'
+    flexGrow = null as any
+    height = null as number
+    minHeight = null as number
+    width = null as number
+    minWidth = null as number
     justifyContent = 'flex-start'
     alignItems = 'flex-start'
     flexDirection = 'row'
     flexWrap = 'nowrap'
-    flexGrow = null as any
     background = 'white'
     overflow = 'hidden'
 }

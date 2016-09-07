@@ -9,9 +9,15 @@ export default class InputComponent extends React.Component <module.PropsInterfa
 
     render() {
         // 重新组成符合 select 结构的 options
-        let selectOptions: any
+        let selectOptions: Array<{
+            key: string
+            value: string
+        }> = []
         this.props.options && this.props.options.forEach((item: any)=> {
-            selectOptions[item.key] = item.value
+            selectOptions.push({
+                key: item.key,
+                value: item.value
+            })
         })
 
         const otherProps = others(new module.Props(), this.props)
