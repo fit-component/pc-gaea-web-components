@@ -11,6 +11,8 @@ export interface PropsInterface {
     flexGrow?: number
     background?: string
     overflow?: string
+    overflowX?: string
+    overflowY?: string
 }
 
 export class PropsGaea {
@@ -60,8 +62,21 @@ export class PropsGaea {
     }, {
         field: 'display',
         label: '布局类型',
-        editor: 'none',
-        editable: false
+        editor: 'selector',
+        editable: true,
+        selector: [{
+            key: 'flex',
+            value: 'flex'
+        }, {
+            key: 'block',
+            value: 'block'
+        }, {
+            key: 'inline-block',
+            value: 'inline-block'
+        }, {
+            key: 'table',
+            value: 'table'
+        }]
     }, {
         field: 'justifyContent',
         label: '主轴对齐方式',
@@ -153,6 +168,8 @@ export class Props extends PropsGaea implements PropsInterface {
     flexWrap = 'nowrap'
     background = 'white'
     overflow = 'hidden'
+    overflowX = null as any
+    overflowY = null as any
 }
 
 export interface StateInterface {

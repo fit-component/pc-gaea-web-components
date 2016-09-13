@@ -19,7 +19,9 @@ export default class LayoutComponent extends React.Component <module.PropsInterf
             flexWrap: this.props.flexWrap,
             justifyContent: this.props.justifyContent,
             alignItems: this.props.alignItems,
-            overflow: this.props.overflow
+            overflow: this.props.overflow,
+            overflowX: this.props.overflowX,
+            overflowY: this.props.overflowY
         }
 
         const otherProps = others(new module.Props(), this.props)
