@@ -21,7 +21,15 @@ export default class LayoutComponent extends React.Component <module.PropsInterf
             alignItems: this.props.alignItems,
             overflow: this.props.overflow,
             overflowX: this.props.overflowX,
-            overflowY: this.props.overflowY
+            overflowY: this.props.overflowY,
+            paddingLeft: this.props.paddingLeft,
+            paddingTop: this.props.paddingTop,
+            paddingRight: this.props.paddingRight,
+            paddingBottom: this.props.paddingBottom,
+            marginLeft: this.props.marginLeft,
+            marginTop: this.props.marginTop,
+            marginRight: this.props.marginRight,
+            marginBottom: this.props.marginBottom
         }
 
         const otherProps = others(new module.Props(), this.props)

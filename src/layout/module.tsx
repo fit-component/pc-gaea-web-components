@@ -13,6 +13,14 @@ export interface PropsInterface {
     overflow?: string
     overflowX?: string
     overflowY?: string
+    paddingLeft?: number
+    paddingTop?: number
+    paddingRight?: number
+    paddingBottom?: number
+    marginLeft?: number
+    marginTop?: number
+    marginRight?: number
+    marginBottom?: number
 }
 
 export class PropsGaea {
@@ -152,6 +160,11 @@ export class PropsGaea {
             key: 'wrap-reverse',
             value: 'wrap-reverse'
         }]
+    }, {
+        field: null as any,
+        label: '边距',
+        editor: 'marginPadding',
+        editable: true
     }]
 }
 
@@ -170,6 +183,14 @@ export class Props extends PropsGaea implements PropsInterface {
     overflow = 'hidden'
     overflowX = null as any
     overflowY = null as any
+    paddingLeft = 0
+    paddingTop = 0
+    paddingRight = 0
+    paddingBottom = 0
+    marginLeft = 0
+    marginTop = 0
+    marginRight = 0
+    marginBottom = 0
 }
 
 export interface StateInterface {
